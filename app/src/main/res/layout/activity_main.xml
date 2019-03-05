@@ -66,10 +66,16 @@
                         android:entries="@array/estado"/>
 
                     <Button
-                        android:id="@+id/btnShow"
+                        android:id="@+id/btnAdd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Guardar" />
+
+                    <Button
+                        android:id="@+id/btnView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="View Data" />
 
 
                 </LinearLayout>
