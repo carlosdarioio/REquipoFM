@@ -1,0 +1,55 @@
+Tienda.
+025
+002
+053
+081
+038
+045
+
+Departamento.
+Vendedor
+Creditos
+Caja
+Compras
+Mercadeo
+Contabilidad 
+Distribucion y Logistica 
+Financiero
+Mayoreo
+Gestion Humana 
+Informatica
+Legal
+GG
+Multimaderas
+
+
+Equipo.
+PC
+Monitor
+Mouse
+Teclado
+Impresora
+
+
+
+Lugar.
+Oficina
+Tienda
+Bodega
+
+
+Estado.
+Nuevo
+Recien Usado
+Usado
+Viejo
+Mal Estado
+
+text
+MACAdrres(Enmascarado osea cada dos txt poner -).
+Serie.
+Marca.
+Modelo.
+
+
+
