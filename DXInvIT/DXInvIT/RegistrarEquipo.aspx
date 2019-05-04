@@ -27,13 +27,8 @@
                     <!-- select -->   
                   <div class="form-group">
                     <label>Tienda</label>
-                    <select id="tienda" class="form-control">
-                        <option value="025">025</option>
-                        <option value="002">002</option>
-                        <option value="053">053</option>
-                        <option value="081">081</option>
-                        <option value="038">038</option>
-                        <option value="045">045</option>
+                    <select id="tienda" class="form-control" runat="server">
+                        <option></option>                        
                     </select>
                   </div> 
 
