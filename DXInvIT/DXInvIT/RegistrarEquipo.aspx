@@ -1,9 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="RegistrarEquipo.aspx.cs" Inherits="DXInvIT.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- 
 
-
-<input type='text' id='textbox' />
     <!--INICIO-->
     <div class="jumbotron">
       <div class="container">
@@ -113,22 +110,22 @@ Mal Estado-->
 
                    <div class="form-group">
                     <label>MACAdrres</label>
-                    <input class="form-control cep" id="macadrres" type="text">
+                    <input class="form-control simple-field-data-mask" id="macadrres" type="text" data-mask="AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA" placeholder="00-09-0f-1F-E0-09">
                   </div> 
 
                     <div class="form-group">
                     <label>Serie</label>
-                    <input class="form-control" id="serie" type="text" placeholder="xx-xx-xx-xx" required>
+                    <input class="form-control" id="serie" type="text" placeholder="Serie" required>
                   </div> 
 
                     <div class="form-group">
                     <label>Marca</label>
-                    <input class="form-control" id="marca" type="text" placeholder="xx-xx-xx-xx" required>
+                    <input class="form-control" id="marca" type="text" placeholder="Marca" required>
                   </div> 
 
                     <div class="form-group">
                     <label>Modelo</label>
-                    <input class="form-control" id="modelo" type="text" placeholder="xx-xx-xx-xx" required>
+                    <input class="form-control" id="modelo" type="text" placeholder="Modelo" required>
                   </div> 
 
 
@@ -177,25 +174,26 @@ Mal Estado-->
             alert('modelo' + modelo);*/
             //tienda, departamento, equipo, lugar, estado, macadrres, serie, marca, modelo
             
+            if (macadrres != "" && serie != "" && marca != "" && modelo != "") {
+                $.ajax({
+                    type: 'POST',
+                    cache: 'false',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    url: 'RegistrarEquipo.aspx/InserttData',
+                    data: JSON.stringify({ xtienda: tienda, xdepartamento: departamento, xequipo: equipo, xlugar: lugar, xestado: estado, xmacadrres: macadrres, xserie: serie, xmarca: marca, xmodelo: modelo }),
+                    success: function (response) {
+                        var result = JSON.parse(response.d);
 
-            $.ajax({
-                type: 'POST',
-                cache: 'false',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                url: 'RegistrarEquipo.aspx/InserttData',
-                data: JSON.stringify({ xtienda: tienda, xdepartamento: departamento, xequipo: equipo, xlugar: lugar, xestado: estado, xmacadrres: macadrres, xserie: serie, xmarca: marca, xmodelo: modelo }),
-                success: function (response) {
-                    var result = JSON.parse(response.d);                                   
-                    
-                    alert('Datos Actualizados');
-                    window.location.reload();                    
-                },
-                error: function (response) {
-                    alert("error2 " + response.d);
-                    window.location.reload();
-                }
-            });/**/
+                        alert(result['1']);
+                        window.location.reload();
+                    },
+                    error: function (response) {
+                        alert("error2 " + response.d);
+                        window.location.reload();
+                    }
+                });/**/
+            } else { alert('Error');}
         }
 
 
@@ -204,26 +202,24 @@ Mal Estado-->
 
 
     </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="Scripts/jquery.mask.js"></script>
+
+
 <script type="text/javascript">
 
    
 
     
-    $(document).ready(function () {
-        var options = {
-            onKeyPress: function (cep, e, field, options) {
-                var masks = ['00000-000', '0-00-00-00'];
-                var mask = (cep.length > 7) ? masks[1] : masks[0];
-                $('#macadrres').mask(mask, options);
-            }
-        };
-
-        $('#macadrres').mask('00000-000', options);
-    });
 </script>
+    
 
 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
+  
+  <script type="text/javascript" src="./sinon-1.10.3.js"></script>
+  <script type="text/javascript" src="./sinon-qunit-1.0.0.js"></script>
+
+  <script type="text/javascript" src="./jquery.mask.js"></script>
+  <script type="text/javascript" src="jquery.mask.test.js"></script>
     
 </asp:Content>

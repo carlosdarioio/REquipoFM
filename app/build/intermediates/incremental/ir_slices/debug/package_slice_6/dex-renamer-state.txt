@@ -1,0 +1,4 @@
+#Mon Mar 04 20:35:14 CST 2019
+base.0=C\:\\Users\\cdfn3\\AndroidStudioProjects\\REquipoFM\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\6
+path.0=classes.dex
+renamed.0=classes.dex

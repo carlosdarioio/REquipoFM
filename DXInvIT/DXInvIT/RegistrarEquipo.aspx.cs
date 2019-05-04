@@ -40,10 +40,28 @@ namespace DXInvIT
                        '{7}',
                        '{8}',
                        '{9}')";//select 'Listo'[r]
-                                                                                                 //DataTable xDT =
-            MainClass.xPOSTToSQL(string.Format(sql, xtienda, xdepartamento, xequipo, xestado, xlugar,  xmacadrres, xserie, xmarca, xmodelo,DateTime.Now.ToString("yyyyMMdd")));
+
+
+            string mac= "";
+            try
+            {
+                mac = MainClass.xGetFromSQL(string.Format("SELECT  [macadrres]  FROM [blog].[dbo].[CFInvEquipoIT]  where macadrres='{0}'", xmacadrres)).Rows[0][0].ToString();
+            }
+            catch
+            {
+                mac = "";
+            }
             Dictionary<string, string> name = new Dictionary<string, string>();
-            name.Add("1", "Listo");//            
+            if (mac == "")
+            {
+                MainClass.xPOSTToSQL(string.Format(sql, xtienda, xdepartamento, xequipo, xestado, xlugar, xmacadrres, xserie, xmarca, xmodelo, DateTime.Now.ToString("yyyyMMdd")));
+                name.Add("1", "Datos Actualizados");
+
+            }
+            else
+            { name.Add("1", "Ya existe"); }
+            
+                        
             string myJsonString = (new JavaScriptSerializer()).Serialize(name);
             return myJsonString;
 

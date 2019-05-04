@@ -108,6 +108,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="jquery.mask.js" />
     <Content Include="pages\calendar.html" />
     <Content Include="pages\charts\chartjs.html" />
     <Content Include="pages\charts\flot.html" />
@@ -784,6 +785,8 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="qunit.css" />
+    <Content Include="qunit.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -794,6 +797,9 @@
     <Content Include="Equipos.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sinon-1.10.3.js" />
+    <Content Include="sinon-qunit-1.0.0.js" />
+    <Content Include="sinon-qunit.js" />
     <Content Include="Site.master" />
   </ItemGroup>
   <ItemGroup>
@@ -941,6 +947,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="zepto\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
