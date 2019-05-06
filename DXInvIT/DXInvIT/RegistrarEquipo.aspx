@@ -35,22 +35,8 @@
                      <!-- select -->
                   <div class="form-group">
                     <label>Departamento.</label>
-                    <select id="departamento" class="form-control">
-                      <option value="Vendedor">Vendedor</option> 
-                        <option value="Creditos">Creditos</option>   
-                        <option value="Caja">Caja</option>   
-                        <option value="Recepcion">Recepcion</option> 
-                        <option value="Contabilidad">Contabilidad</option> 
-                        <option value="Compras">Compras</option>   
-                        <option value="Mercadeo">Mercadeo</option>                             
-                        <option value="DistribucionLogistica ">Distribucion y Logistica </option>   
-                        <option value="Financiero">Financiero</option>   
-                        <option value="Mayoreo">Mayoreo</option>   
-                        <option value="RRHH">Gestion Humana </option>   
-                        <option value="Legal">Legal</option>   
-                        <option value="Multimaderas">Multimaderas</option>   
-                        <option value="Informatica">Informatica</option>   
-                        <option value="GG">GG</option>   
+                    <select id="departamento" class="form-control" runat="server">
+                      <option></option>        
                     </select>
                   </div> 
 
@@ -59,45 +45,22 @@
                          -->
                   <div class="form-group">
                     <label>Equipo</label>
-                    <select id="equipo" class="form-control">
-                      <option value="PC">PC</option>                     
-                        <option value="Monitor">Monitor</option>                     
-                        <option value="Mouse">Mouse</option>                     
-                        <option value="Teclado">Teclado</option>                     
-                        <option value="Impresora">Impresora</option>                     
+                    <select id="equipo" class="form-control" runat="server">
+                        <option></option>                                              
                     </select>
                   </div> 
-
-               
-
-                     <!-- select 
-                         Oficina
-Tienda
-Bodega-->
+         
                   <div class="form-group">
                     <label>Lugar</label>
-                    <select id="lugar" class="form-control">
-                      <option value="Tienda">Tienda</option>                     
-                       <option value="Bodega">Bodega</option>                     
-                         <option value="Oficina">Oficina</option>                     
+                    <select id="lugar" class="form-control" runat="server">
+                    <option></option>                    
                     </select>
                   </div> 
 
-                    <!--
-                        .
-Nuevo
-Recien Usado
-Usado
-Viejo
-Mal Estado-->
                     <div class="form-group">
                     <label>Estado</label>
-                    <select  id="estado" class="form-control">
-                      <option>Nuevo</option>                     
-                        <option value="RecienUsado">Recien Usado</option>                     
-                        <option value="Usado">Usado</option>
-                        <option value="Viejo">Viejo</option>
-                        <option value="MalEstado">Mal Estado</option>
+                    <select  id="estado" class="form-control" runat="server">
+                      <option></option>                    
                     </select>
                   </div> 
 
@@ -146,11 +109,12 @@ Mal Estado-->
     <script type="text/javascript">
         function updateChange() {
             
-            var tienda = $("#tienda option:selected").val();
-            var departamento = $("#departamento option:selected").val();
-            var equipo = $("#equipo option:selected").val();
-            var lugar = $("#lugar option:selected").val();
-            var estado = $("#estado option:selected").val();
+            //var tienda = $("#tienda option:selected").val();
+            var tienda = $("#<%= tienda.ClientID %>").val();
+            var departamento = $("#<%= departamento.ClientID %>").val();
+            var equipo = $("#<%= equipo.ClientID %>").val();
+            var lugar = $("#<%= lugar.ClientID %>").val();
+            var estado = $("#<%= estado.ClientID %>").val();
            
             var macadrres = $("#macadrres").val();
             var serie = $("#serie").val();
